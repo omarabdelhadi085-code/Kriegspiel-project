@@ -1,0 +1,132 @@
+[
+  {
+    "y": 3,
+    "x": 10,
+    "type": "mountain"
+  },
+  {
+    "y": 3,
+    "x": 11,
+    "type": "mountain"
+  },
+  {
+    "y": 3,
+    "x": 12,
+    "type": "mountain"
+  },
+  {
+    "y": 3,
+    "x": 13,
+    "type": "mountain"
+  },
+  {
+    "y": 4,
+    "x": 10,
+    "type": "mountain"
+  },
+  {
+    "y": 5,
+    "x": 10,
+    "type": "mountain"
+  },
+  {
+    "y": 6,
+    "x": 10,
+    "type": "mountainPass"
+  },
+  {
+    "y": 7,
+    "x": 10,
+    "type": "mountain"
+  },
+  {
+    "y": 8,
+    "x": 10,
+    "type": "mountain"
+  },
+  {
+    "y": 9,
+    "x": 10,
+    "type": "mountain"
+  },
+  {
+    "y": 14,
+    "x": 11,
+    "type": "mountain"
+  },
+  {
+    "y": 14,
+    "x": 12,
+    "type": "mountain"
+  },
+  {
+    "y": 14,
+    "x": 13,
+    "type": "mountain"
+  },
+  {
+    "y": 14,
+    "x": 14,
+    "type": "mountain"
+  },
+  {
+    "y": 14,
+    "x": 15,
+    "type": "mountain"
+  },
+  {
+    "y": 14,
+    "x": 16,
+    "type": "mountain"
+  },
+  {
+    "y": 15,
+    "x": 16,
+    "type": "mountainPass"
+  },
+  {
+    "y": 16,
+    "x": 16,
+    "type": "mountain"
+  },
+  {
+    "y": 17,
+    "x": 16,
+    "type": "mountain"
+  },
+  {
+    "y": 18,
+    "x": 16,
+    "type": "mountain"
+  },
+  {
+    "y": 2,
+    "x": 8,
+    "type": "fortress"
+  },
+  {
+    "y": 13,
+    "x": 3,
+    "type": "fortress"
+  },
+  {
+    "y": 9,
+    "x": 13,
+    "type": "fortress"
+  },
+  {
+    "y": 8,
+    "x": 21,
+    "type": "fortress"
+  },
+  {
+    "y": 12,
+    "x": 15,
+    "type": "fortress"
+  },
+  {
+    "y": 15,
+    "x": 23,
+    "type": "fortress"
+  }
+]

@@ -1,0 +1,230 @@
+[
+  {
+    "y": 2,
+    "x": 15,
+    "team": "north",
+    "type": "arsenal"
+  },
+  {
+    "y": 4,
+    "x": 8,
+    "team": "north",
+    "type": "arsenal"
+  },
+  {
+    "y": 4,
+    "x": 3,
+    "team": "north",
+    "type": "relay"
+  },
+  {
+    "y": 6,
+    "x": 5,
+    "team": "north",
+    "type": "swiftRelay"
+  },
+  {
+    "y": 7,
+    "x": 3,
+    "team": "north",
+    "type": "cavalry"
+  },
+  {
+    "y": 7,
+    "x": 4,
+    "team": "north",
+    "type": "cavalry"
+  },
+  {
+    "y": 8,
+    "x": 3,
+    "team": "north",
+    "type": "cavalry"
+  },
+  {
+    "y": 8,
+    "x": 4,
+    "team": "north",
+    "type": "cavalry"
+  },
+  {
+    "y": 8,
+    "x": 6,
+    "team": "north",
+    "type": "cannon"
+  },
+  {
+    "y": 7,
+    "x": 8,
+    "team": "north",
+    "type": "swiftCannon"
+  },
+  {
+    "y": 7,
+    "x": 6,
+    "team": "north",
+    "type": "infantry"
+  },
+  {
+    "y": 8,
+    "x": 5,
+    "team": "north",
+    "type": "infantry"
+  },
+  {
+    "y": 9,
+    "x": 6,
+    "team": "north",
+    "type": "infantry"
+  },
+  {
+    "y": 7,
+    "x": 7,
+    "team": "north",
+    "type": "infantry"
+  },
+  {
+    "y": 8,
+    "x": 7,
+    "team": "north",
+    "type": "infantry"
+  },
+  {
+    "y": 8,
+    "x": 8,
+    "team": "north",
+    "type": "infantry"
+  },
+  {
+    "y": 7,
+    "x": 9,
+    "team": "north",
+    "type": "infantry"
+  },
+  {
+    "y": 8,
+    "x": 9,
+    "team": "north",
+    "type": "infantry"
+  },
+  {
+    "y": 6,
+    "x": 10,
+    "team": "north",
+    "type": "infantry"
+  },
+  {
+    "y": 20,
+    "x": 3,
+    "team": "south",
+    "type": "arsenal"
+  },
+  {
+    "y": 20,
+    "x": 23,
+    "team": "south",
+    "type": "arsenal"
+  },
+  {
+    "y": 15,
+    "x": 23,
+    "team": "south",
+    "type": "relay"
+  },
+  {
+    "y": 14,
+    "x": 17,
+    "team": "south",
+    "type": "swiftRelay"
+  },
+  {
+    "y": 11,
+    "x": 18,
+    "team": "south",
+    "type": "cannon"
+  },
+  {
+    "y": 15,
+    "x": 16,
+    "team": "south",
+    "type": "swiftCannon"
+  },
+  {
+    "y": 12,
+    "x": 18,
+    "team": "south",
+    "type": "cavalry"
+  },
+  {
+    "y": 13,
+    "x": 18,
+    "team": "south",
+    "type": "cavalry"
+  },
+  {
+    "y": 11,
+    "x": 19,
+    "team": "south",
+    "type": "cavalry"
+  },
+  {
+    "y": 12,
+    "x": 19,
+    "team": "south",
+    "type": "cavalry"
+  },
+  {
+    "y": 11,
+    "x": 15,
+    "team": "south",
+    "type": "infantry"
+  },
+  {
+    "y": 11,
+    "x": 16,
+    "team": "south",
+    "type": "infantry"
+  },
+  {
+    "y": 11,
+    "x": 17,
+    "team": "south",
+    "type": "infantry"
+  },
+  {
+    "y": 12,
+    "x": 15,
+    "team": "south",
+    "type": "infantry"
+  },
+  {
+    "y": 12,
+    "x": 16,
+    "team": "south",
+    "type": "infantry"
+  },
+  {
+    "y": 12,
+    "x": 17,
+    "team": "south",
+    "type": "infantry"
+  },
+  {
+    "y": 13,
+    "x": 15,
+    "team": "south",
+    "type": "infantry"
+  },
+  {
+    "y": 13,
+    "x": 16,
+    "team": "south",
+    "type": "infantry"
+  },
+  {
+    "y": 13,
+    "x": 17,
+    "team": "south",
+    "type": "infantry"
+  }
+]
