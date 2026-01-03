@@ -8,7 +8,7 @@ import java.awt.*;
 public class MainWindow extends JFrame {
     public MainWindow() throws HeadlessException {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setTitle("Kriegspiel");
+        this.setTitle("Kriegspiel: The Game of War");
 
         Image icon = ImageFileCached.readImage("/images/icon.png");
         this.setIconImage(icon);
