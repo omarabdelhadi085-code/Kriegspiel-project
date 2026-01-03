@@ -7,7 +7,6 @@ import ru.vsu.cs.p_p_v.kriegspiel.sdk.game.Team;
 import ru.vsu.cs.p_p_v.kriegspiel.sdk.unit.stats.UnitBaseStats;
 
 import java.awt.*;
-import java.io.File;
 
 public class Relay extends RelayUnit {
     public Relay(Board board, Team team, Coordinate position) {
@@ -16,8 +15,8 @@ public class Relay extends RelayUnit {
 
     @Override
     public Image getImageRepresentation() {
-        String imgPath = String.format("images/units/%s/relay.png", getTeam() == Team.North ? "north" : "south");
+        String imgPath = String.format("/images/units/%s/relay.png", getTeam() == Team.North ? "north" : "south");
 
-        return ImageFileCached.readImage(new File(imgPath));
+        return ImageFileCached.readImage(imgPath);
     }
 }

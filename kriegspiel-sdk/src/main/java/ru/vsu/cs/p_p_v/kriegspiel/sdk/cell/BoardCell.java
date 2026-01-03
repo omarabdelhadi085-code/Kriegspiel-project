@@ -7,7 +7,7 @@ import ru.vsu.cs.p_p_v.kriegspiel.sdk.game.Team;
 import ru.vsu.cs.p_p_v.kriegspiel.sdk.unit.BoardUnit;
 
 import java.awt.*;
-import java.io.File;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -42,7 +42,9 @@ public abstract class BoardCell {
         return isObstacle;
     }
 
-    public Image getBackgroundImage() {return null;}
+    public Image getBackgroundImage() {
+        return null;
+    }
 
     public List<Image> getConnectionImages() {
         List<Image> images = new ArrayList<>();
@@ -51,13 +53,13 @@ public abstract class BoardCell {
             return images;
 
         for (ConnectionDirection connectionDir : northConnectionsDirections) {
-            String imgPath = String.format("images/connections/north%s.png", connectionDir.toString());
-            images.add(ImageFileCached.readImage(new File(imgPath)));
+            String imgPath = String.format("/images/connections/north%s.png", connectionDir.toString());
+            images.add(ImageFileCached.readImage(imgPath));
         }
 
         for (ConnectionDirection connectionDir : southConnectionsDirections) {
-            String imgPath = String.format("images/connections/south%s.png", connectionDir.toString());
-            images.add(ImageFileCached.readImage(new File(imgPath)));
+            String imgPath = String.format("/images/connections/south%s.png", connectionDir.toString());
+            images.add(ImageFileCached.readImage(imgPath));
         }
 
         return images;
