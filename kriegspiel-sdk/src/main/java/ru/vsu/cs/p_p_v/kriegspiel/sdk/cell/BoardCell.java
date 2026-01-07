@@ -53,12 +53,18 @@ public abstract class BoardCell {
             return images;
 
         for (ConnectionDirection connectionDir : northConnectionsDirections) {
-            String imgPath = String.format("/images/connections/north%s.png", connectionDir.toString());
+            // Convert enum name to match filename case (e.g., "Vertical" -> "vertical")
+            String dirName = connectionDir.toString();
+            String dirNameLower = dirName.substring(0, 1).toLowerCase() + dirName.substring(1);
+            String imgPath = String.format("/images/connections/north%s.png", dirNameLower);
             images.add(ImageFileCached.readImage(imgPath));
         }
 
         for (ConnectionDirection connectionDir : southConnectionsDirections) {
-            String imgPath = String.format("/images/connections/south%s.png", connectionDir.toString());
+            // Convert enum name to match filename case (e.g., "Vertical" -> "vertical")
+            String dirName = connectionDir.toString();
+            String dirNameLower = dirName.substring(0, 1).toLowerCase() + dirName.substring(1);
+            String imgPath = String.format("/images/connections/south%s.png", dirNameLower);
             images.add(ImageFileCached.readImage(imgPath));
         }
 

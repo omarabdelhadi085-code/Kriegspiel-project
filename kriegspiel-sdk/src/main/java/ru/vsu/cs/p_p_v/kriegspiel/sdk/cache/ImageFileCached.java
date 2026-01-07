@@ -12,33 +12,69 @@ import static java.awt.image.BufferedImage.TYPE_INT_ARGB;
 
 public class ImageFileCached {
     private static final Map<String, Image> cache = new ConcurrentHashMap<>();
+    
+    // Enable debug logging via system property: -Dkriegspiel.debug.resources=true
+    private static final boolean DEBUG_RESOURCES = 
+        Boolean.parseBoolean(System.getProperty("kriegspiel.debug.resources", "false"));
 
     public static Image readImage(String path) {
-        // Ensure path starts with / for JAR loading
+        // Normalize path: ensure forward slashes and leading slash for classpath resources
         path = path.replace("\\", "/"); // Force forward slashes for JAR compatibility
         if (!path.startsWith("/")) {
             path = "/" + path;
         }
-        // Debug print
-        System.out.println("Trying to load: " + path);
-
+        
+        // Use normalized path as cache key (path is already normalized above)
         Image cachedImage = cache.get(path);
         if (cachedImage != null)
             return cachedImage;
 
         Image rawImage = null;
         try {
-            java.net.URL imageUrl = ImageFileCached.class.getResource(path);
+            // Use context classloader first (most reliable for application code)
+            // Falls back to system classloader, then class's classloader
+            // This ensures resources are found regardless of module/classloader structure
+            java.net.URL imageUrl = null;
+            String loaderUsed = null;
+            
+            ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
+            if (contextClassLoader != null) {
+                imageUrl = contextClassLoader.getResource(path.substring(1)); // Remove leading /
+                if (imageUrl != null) loaderUsed = "context";
+            }
+            
             if (imageUrl == null) {
-                String msg = "Failed to load image inside JAR!\nOS: " + System.getProperty("os.name")
-                        + "\nRequested Path: '" + path + "'";
+                ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
+                if (systemClassLoader != null) {
+                    imageUrl = systemClassLoader.getResource(path.substring(1));
+                    if (imageUrl != null) loaderUsed = "system";
+                }
+            }
+            
+            if (imageUrl == null) {
+                // Fallback to class-relative loading (for backwards compatibility)
+                imageUrl = ImageFileCached.class.getResource(path);
+                if (imageUrl != null) loaderUsed = "class-relative";
+            }
+            
+            if (DEBUG_RESOURCES && imageUrl != null) {
+                System.out.println("[RESOURCE_DEBUG] Loaded: " + path + " via " + loaderUsed + " classloader");
+            }
+            
+            if (imageUrl == null) {
+                String msg = "Failed to load image resource!\nOS: " + System.getProperty("os.name")
+                        + "\nRequested Path: '" + path + "'\n"
+                        + "This indicates the resource is not on the classpath.\n"
+                        + "Ensure images are in src/main/resources and properly packaged.\n"
+                        + "Enable debug logging with: -Dkriegspiel.debug.resources=true";
                 System.err.println(msg);
                 javax.swing.JOptionPane.showMessageDialog(null, msg);
-                System.exit(1);
+                return createErrorImage();
             }
+            
             rawImage = ImageIO.read(imageUrl);
-            System.out.println("[ASSET_LOAD] Loaded: " + path);
         } catch (IOException e) {
+            System.err.println("IOException while loading image: " + path);
             e.printStackTrace();
             return createErrorImage();
         }
