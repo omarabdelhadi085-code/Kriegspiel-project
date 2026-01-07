@@ -14,9 +14,13 @@ public class ImageFileCached {
     private static final Map<String, Image> cache = new ConcurrentHashMap<>();
 
     public static Image readImage(String path) {
+        // Ensure path starts with / for JAR loading
+        path = path.replace("\\", "/"); // Force forward slashes for JAR compatibility
         if (!path.startsWith("/")) {
             path = "/" + path;
         }
+        // Debug print
+        System.out.println("Trying to load: " + path);
 
         Image cachedImage = cache.get(path);
         if (cachedImage != null)
@@ -26,8 +30,11 @@ public class ImageFileCached {
         try {
             java.net.URL imageUrl = ImageFileCached.class.getResource(path);
             if (imageUrl == null) {
-                System.err.println("[CRITICAL] Image not found: " + path);
-                return createErrorImage();
+                String msg = "Failed to load image inside JAR!\nOS: " + System.getProperty("os.name")
+                        + "\nRequested Path: '" + path + "'";
+                System.err.println(msg);
+                javax.swing.JOptionPane.showMessageDialog(null, msg);
+                System.exit(1);
             }
             rawImage = ImageIO.read(imageUrl);
             System.out.println("[ASSET_LOAD] Loaded: " + path);

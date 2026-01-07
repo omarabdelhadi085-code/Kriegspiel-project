@@ -1,13 +1,27 @@
-# ⚠️ START HERE: HOW TO PLAY
+# Kriegspiel Project
 
-### 🛑 DO NOT TRY TO COMPILE THE CODE! (Unless you are a developer)
+> [!NOTE]
+> This is a **source-only** repository. No pre-compiled binaries are included.
 
-## 👉 [CLICK HERE TO DOWNLOAD THE PLAYABLE GAME](https://github.com/omarabdelhadi085-code/Kriegspiel-project/releases/latest)
+## 🛠 How to Build & Run
+This project is a standard Java Maven project.
 
-**Instructions:**
-1. Click the link above.
-2. Under "Assets", download **`Kriegspiel-v2.0-Playable.jar`**.
-3. Double-click the file to run it.
+### Prerequisites
+*   Java Development Kit (JDK) 17 or higher
+*   Maven 3.6+
+
+### Build Instructions
+Open a terminal in the project root and run:
+```bash
+mvn clean install
+```
+
+### Run the Client
+After a successful build, you can run the client using:
+```bash
+java -jar kriegspiel-client/target/kriegspiel-client-2.1.jar
+```
+*(Note: The exact JAR name in `target/` may vary slightly based on the version in `pom.xml`)*
 
 ---
 
